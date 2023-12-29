@@ -1,12 +1,14 @@
-import { App } from './app';
-import { createRoot } from 'react-dom/client';
-
 import React from 'react';
-const container = document.getElementById('app');
-const root = createRoot(container);
-root.render(<App tab="home" />);
+import { hydrateRoot } from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+import App from './App';
 
-const devMode = process.env.NODE_ENV === 'development';
-if (devMode && module && module.hot) {
-  module.hot.accept();
-}
+hydrateRoot(
+  document,
+  <React.StrictMode>
+    <BrowserRouter>
+      <App />
+      <div>Hi</div>
+    </BrowserRouter>
+  </React.StrictMode>
+);
