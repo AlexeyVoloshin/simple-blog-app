@@ -4,7 +4,7 @@ import { App } from '../src/App.jsx';
 
 export const render = response => {
   const stream = renderToPipeableStream(<App />, {
-    bootstrapScripts: ['/server.bundle.js'],
+    bootstrapScripts: ['http://localhost:8080/scripts/bundle.js'],
     onShellReady() {
       response.setHeader('content-type', 'text/html');
       stream.pipe(response);

@@ -10,8 +10,8 @@ const config = {
 
   entry: './src/index.js',
   output: {
-    filename: 'client.bundle.js', // [B]
-    path: path.resolve(__dirname, 'build'), // [B]
+    path: path.join(__dirname, './build/client'), // [B]
+    filename: 'scripts/bundle.js', // [B]
     publicPath: `http://localhost:${clientPort}/`, // [C]
   },
 
@@ -21,7 +21,24 @@ const config = {
   },
 
   module: {
-    rules: [],
+    rules: [
+      {
+        test: /\.sass$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              modules: {
+                exportLocalsConvention: 'camelCase',
+                localIdentName: '[local]_[hash:base64:5]',
+              },
+            },
+          },
+          'sass-loader',
+        ],
+      },
+    ],
   },
 
   plugins: [

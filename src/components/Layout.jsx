@@ -9,10 +9,7 @@ export const Layout = ({ children }) => {
           name="viewport"
           content="width=device-width, initial-scale=1.0"
         />
-        <title>My SSR App</title>
-        <link
-          rel="stylesheet"
-          href="src/styles.css"></link>
+        <title>Blog</title>
       </head>
       <body>
         <div id="root">{children}</div>
