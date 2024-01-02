@@ -1,4 +1,12 @@
+@import url("/assets/styles/unstyle.css");
+
 p {
     font-size: 20px;
     font-weight: 700;
+}
+
+main {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
 }

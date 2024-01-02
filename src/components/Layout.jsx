@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Layout = ({ children }) => {
+export const Layout = ({ title, children }) => {
   return (
     <html>
       <head>
@@ -9,7 +9,7 @@ export const Layout = ({ children }) => {
           name="viewport"
           content="width=device-width, initial-scale=1.0"
         />
-        <title>Blog</title>
+        <title>{title}</title>
       </head>
       <body>
         <div id="root">{children}</div>
