@@ -12,12 +12,13 @@ const config = {
   output: {
     path: path.join(__dirname, './build/client'), // [B]
     filename: 'scripts/bundle.js', // [B]
-    publicPath: `http://localhost:${clientPort}/`, // [C]
+    publicPath: `http://localhost:3000/`, // [C]
   },
 
   devServer: {
     port: clientPort, // [C]
-    liveReload: true,
+    // liveReload: true
+    hot: true,
   },
 
   module: {
